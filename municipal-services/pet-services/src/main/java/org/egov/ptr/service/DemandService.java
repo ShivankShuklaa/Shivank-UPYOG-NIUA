@@ -47,6 +47,8 @@ public class DemandService {
 
 		// Extracting required information from the pet application
 		PetRegistrationApplication petApplication = petReq.getPetRegistrationApplications().get(0);
+		// Reverting below tenantid to use ULB code as demands get generated at ULB level
+		// Using stateCode as tenantId was causing issue in Bill generation - (Bill Not Found Issue)
 		String tenantId = petApplication.getTenantId();
 		String consumerCode = petApplication.getApplicationNumber();
 
