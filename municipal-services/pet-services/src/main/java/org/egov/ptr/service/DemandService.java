@@ -47,7 +47,7 @@ public class DemandService {
 
 		// Extracting required information from the pet application
 		PetRegistrationApplication petApplication = petReq.getPetRegistrationApplications().get(0);
-		String tenantId = petApplication.getTenantId().split("\\.")[0];
+		String tenantId = petApplication.getTenantId();
 		String consumerCode = petApplication.getApplicationNumber();
 
 		// Calculating the fee for the pet registration
